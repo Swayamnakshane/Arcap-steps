@@ -206,22 +206,6 @@ kubectl get svc nginx-ingress-ingress-nginx-controller -n ingress-nginx -o jsonp
 
 ## 🔒 Step 12: Enable HTTPS with Cert-Manager
 
-### 1. Example ConfigMap (04-configmap.yaml)
-
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: easyshop-config
-  namespace: easyshop
-data:
-  MONGODB_URI: "mongodb://mongodb-service:27017/easyshop"
-  NODE_ENV: "production"
-  NEXT_PUBLIC_API_URL: "https://easyshop.letsdeployit.com/api"
-  NEXTAUTH_URL: "https://easyshop.letsdeployit.com/"
-  NEXTAUTH_SECRET: "<your-secret>"
-  JWT_SECRET: "<your-jwt-secret>"
-```
 
 ### 2. Example Ingress (10-ingress.yaml)
 
@@ -230,7 +214,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: easyshop-ingress
-  namespace: easyshop
+  namespace: exam
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "50m"
     kubernetes.io/ingress.class: "nginx"
@@ -239,17 +223,17 @@ metadata:
 spec:
   tls:
   - hosts:
-    - easyshop.letsdeployit.com
+    - asses.arcap.com
     secretName: easyshop-tls
   rules:
-  - host: easyshop.letsdeployit.com
+  - host: asses.arcap.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: easyshop-service
+            name: service-name
             port:
               number: 80
 ```
@@ -265,11 +249,11 @@ kubectl apply -f 10-ingress.yaml
 ### 4. Check Status
 
 ```bash
-kubectl get certificate -n easyshop
-kubectl describe certificate easyshop-tls -n easyshop
+kubectl get certificate -n exam
+kubectl describe certificate examportal-tls -n exm
 kubectl logs -n cert-manager -l app=cert-manager
-kubectl get challenges -n easyshop
-kubectl describe challenges -n easyshop
+kubectl get challenges -n exam
+kubectl describe challenges -n exam
 ```
 
 ---

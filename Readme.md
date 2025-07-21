@@ -255,7 +255,7 @@ kubectl logs -n cert-manager -l app=cert-manager
 kubectl get challenges -n exam
 kubectl describe challenges -n exam
 ```
-
+https://asses.arcapreit.com/
 ---
 
 ## ✅ Final Checklist

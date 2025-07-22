@@ -278,3 +278,22 @@ https://asses.arcapreit.com/
 
 ```
 
+to stop nodegroups
+
+aws autoscaling update-auto-scaling-group \
+  --auto-scaling-group-name eks-arcap-52cc0c78-43b4-1b69-66f9-50ab3a8bfd46 \
+  --min-size 0 \
+  --max-size 3 \
+  --desired-capacity 0 \
+  --region us-east-2
+
+to start nodegroup
+
+
+aws autoscaling update-auto-scaling-group \
+  --auto-scaling-group-name eks-arcap-52cc0c78-43b4-1b69-66f9-50ab3a8bfd46 \
+  --min-size 2 \
+  --max-size 3 \
+  --desired-capacity 2 \
+  --region us-east-2
+

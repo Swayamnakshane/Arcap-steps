@@ -297,3 +297,11 @@ aws autoscaling update-auto-scaling-group \
   --desired-capacity 2 \
   --region us-east-2
 
+
+to check nodegroups 
+
+aws ec2 describe-instances \
+  --filters "Name=tag:eks:nodegroup-name,Values=arcap" \
+  --region us-east-2 \
+  --query "Reservations[].Instances[].State.Name"
+

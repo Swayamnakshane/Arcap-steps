@@ -89,6 +89,20 @@ eksctl create nodegroup \
 
 ## 🚦 Step 7: Install & Configure ArgoCD
 
+
+# Download latest ArgoCD CLI (v2.11.3 as of now)
+curl -sSL -o argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+
+# Make it executable
+chmod +x argocd
+
+# Move it to /usr/local/bin
+sudo mv argocd /usr/local/bin/
+
+# Verify installation
+argocd version
+
+
 ### 1️⃣ Create Namespace & Apply Manifest
 
 ```bash

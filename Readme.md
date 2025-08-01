@@ -322,3 +322,9 @@ aws ec2 describe-instances \
   --region us-east-2 \
   --query "Reservations[].Instances[].State.Name"
 
+
+aws ec2 import-key-pair \
+  --region eu-west-1 \
+  --key-name my-eks-key \
+  --public-key-material fileb://~/.ssh/id_ed25519.pub
+

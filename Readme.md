@@ -327,4 +327,5 @@ aws ec2 import-key-pair \
   --region eu-west-1 \
   --key-name my-eks-key \
   --public-key-material fileb://~/.ssh/id_ed25519.pub
+<img width="1280" height="358" alt="image" src="https://github.com/user-attachments/assets/61d68871-10e5-4d00-945b-4a2b5dd68d2e" />
 

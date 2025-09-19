@@ -323,9 +323,12 @@ aws ec2 describe-instances \
   --query "Reservations[].Instances[].State.Name"
 
 
+
 aws ec2 import-key-pair \
   --region eu-west-1 \
   --key-name my-eks-key \
   --public-key-material fileb://~/.ssh/id_ed25519.pub
-<img width="1280" height="358" alt="image" src="https://github.com/user-attachments/assets/61d68871-10e5-4d00-945b-4a2b5dd68d2e" />
+
+![WhatsApp Image 2025-09-19 at 15 45 58_e10fd88a](https://github.com/user-attachments/assets/6ebca7be-4b2c-4f51-82d0-07dcf1989aa9)
+
 
